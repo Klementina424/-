@@ -11,49 +11,49 @@ namespace UnitTestКурс
 	TEST_CLASS(CalculatorTest)
 	{
 		calculator Test;
-		TEST_METHOD(plus)//мое
+		TEST_METHOD(plus)
 		{
 			string res = "+ 2 2";
 			Test.make_prefix("2+2");
 			Assert::AreEqual(Test.print_prefix(), res);
 		}
-		TEST_METHOD(minus)//мое
+		TEST_METHOD(minus)
 		{
 			string res = "- 2 2";
 			Test.make_prefix("2-2");
 			Assert::AreEqual(Test.print_prefix(), res);
 		}
-		TEST_METHOD(multiply)//мое
+		TEST_METHOD(multiply)
 		{
 			string res = "* 2 2";
 			Test.make_prefix("2*2");
 			Assert::AreEqual(Test.print_prefix(), res);
 		}
-		TEST_METHOD(divide)//мое
+		TEST_METHOD(divide)
 		{
 			string res = "/ 2 2";
 			Test.make_prefix("2/2");
 			Assert::AreEqual(Test.print_prefix(), res);
 		}
-		TEST_METHOD(trigan)//мое
+		TEST_METHOD(trigan)
 		{
 			string res = "+ sin(pi) arccos(pi)";
 			Test.make_prefix("sin(pi) + arccos(pi)");
 			Assert::AreEqual(Test.print_prefix(), res);
 		}
-		TEST_METHOD(brackets)//мое
+		TEST_METHOD(brackets)
 		{
 			string res = "arcsin(/ pi 2)";
 			Test.make_prefix("arcsin(pi/2)");
 			Assert::AreEqual(Test.print_prefix(), res);
 		}
-		TEST_METHOD(mix)//мое
+		TEST_METHOD(mix)
 		{
 			string res = "* + 1 sin(pi) - 1 cos(pi)";
 			Test.make_prefix("(1+sin(pi))*(1-cos(pi))");
 			Assert::AreEqual(Test.print_prefix(), res);
 		}
-		TEST_METHOD(unary_minus)//мое
+		TEST_METHOD(unary_minus)
 		{
 			string res = "- 0 -2";
 			Test.make_prefix("-(-2)");
@@ -70,7 +70,7 @@ namespace UnitTestКурс
 	TEST_CLASS(Calculator_Test)
 	{
 		calculator test;
-		TEST_METHOD(sum)//мое
+		TEST_METHOD(sum)
 		{
 			test.make_prefix("2+2");
 			string result = "4.000000";
@@ -82,37 +82,37 @@ namespace UnitTestКурс
 			string result = "0.000000";
 			Assert::AreEqual(test.get_result(), result);
 		}
-		TEST_METHOD(composition)//мое
+		TEST_METHOD(composition)
 		{
 			test.make_prefix("2*2");
 			string result = "4.000000";
 			Assert::AreEqual(test.get_result(), result);
 		}
-		TEST_METHOD(division)//мое
+		TEST_METHOD(division)
 		{
 			test.make_prefix("2/2");
 			string result = "1.000000";
 			Assert::AreEqual(test.get_result(), result);
 		}
-		TEST_METHOD(sum_brackets)//мое
+		TEST_METHOD(sum_brackets)
 		{
 			test.make_prefix("(2-1)+(2-1)");
 			string result = "2.000000";
 			Assert::AreEqual(test.get_result(), result);
 		}
-		TEST_METHOD(trigonometry)//мое
+		TEST_METHOD(trigonometry)
 		{
 			test.make_prefix("cos(pi)");
 			string result = "-1.000000";
 			Assert::AreEqual(test.get_result(), result);
 		}
-		TEST_METHOD(sqrt)//мое
+		TEST_METHOD(sqrt)
 		{
 			test.make_prefix("sqrt(4)");
 			string result = "2.000000";
 			Assert::AreEqual(test.get_result(), result);
 		}
-		TEST_METHOD(logarithm)//не работает
+		TEST_METHOD(logarithm)
 		{
 			test.make_prefix("ln(e)");
 			string result = "1.000000";
